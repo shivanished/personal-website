@@ -1,24 +1,11 @@
-"use client";  // Mark this component as a client component
+"use client";
 
 import Head from 'next/head';
+import Navbar from '../components/navbar';  // Correct path for Navbar component
+import Footer from '../components/footer';  // Correct path for Footer component
 import Image from 'next/image';
-import Link from 'next/link'; 
-import { useEffect, useState } from 'react'; // To handle date and time
 
 export default function Home() {
-  const [currentDateTime, setCurrentDateTime] = useState('');
-
-  useEffect(() => {
-    const updateTime = () => {
-      const date = new Date();
-      setCurrentDateTime(date.toLocaleString());
-    };
-    updateTime(); // Set the initial time
-    const intervalId = setInterval(updateTime, 1000); // Update every second
-
-    return () => clearInterval(intervalId); // Cleanup interval on unmount
-  }, []);
-
   return (
     <div className="flex flex-col min-h-screen bg-beige">
       <Head>
@@ -35,32 +22,7 @@ export default function Home() {
       </Head>
 
       {/* Navbar */}
-      <header className="sticky top-0 z-50 bg-beige text-gray-700 p-4 roboto-mono-regular">
-        <nav className="flex justify-between items-center max-w-7xl mx-auto">
-          {/* Logo on the left */}
-          <div className="flex items-center">
-            <Image
-              src="/images/triangle.svg" // Path to your SVG logo
-              alt="Logo"
-              width={40} // Adjust the width as necessary
-              height={40} // Adjust the height as necessary
-            />
-          </div>
-
-          {/* Navigation buttons in the center */}
-          <div className="flex-grow flex justify-center space-x-8">
-            <Link href="/projects" className="hover:text-yellow-300">Projects</Link>
-            <Link href="/experiences" className="hover:text-yellow-300">Experiences</Link>
-            <Link href="/thoughts" className="hover:text-yellow-300">Thoughts</Link>
-            <Link href="/listening" className="hover:text-yellow-300">What Am I Listening To?</Link>
-          </div>
-
-          {/* Current Date and Time on the right */}
-          <div className="text-right">
-            <p className="text-sm">{currentDateTime}</p>
-          </div>
-        </nav>
-      </header>
+      <Navbar /> {/* Use the Navbar component */}
 
       {/* Main content taking up available space */}
       <main className="flex-grow flex items-center justify-center p-6">
@@ -123,10 +85,8 @@ export default function Home() {
         </div>
       </main>
 
-      {/* Footer - No scroll, pinned to the bottom */}
-      <footer className="text-center py-4">
-        <p className="text-gray-500">© 2024 Shivansh Soni. All rights reserved.</p>
-      </footer>
+      {/* Footer */}
+      <Footer /> {/* Use the Footer component */}
     </div>
   );
 }
