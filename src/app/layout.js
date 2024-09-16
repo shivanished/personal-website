@@ -10,9 +10,6 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         <main>{children}</main>
-        <footer className="text-center mt-10 text-gray-500">
-          © 2024 Shivansh Soni. All rights reserved.
-        </footer>
       </body>
     </html>
   );

@@ -2,8 +2,29 @@
 @tailwind components;
 @tailwind utilities;
 
-/* You can add your custom global styles here */
-body {
-  @apply bg-gray-100;
+/* Apply the beige background to both html and body */
+html, body {
+  @apply bg-beige;
   font-family: 'Inter', sans-serif;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Custom Roboto Mono Font Styles */
+
+/* Bold (700 weight) */
+.roboto-mono-bold {
+  font-family: "Roboto Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* Regular (400 weight) */
+.roboto-mono-regular {
+  font-family: "Roboto Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
 }
