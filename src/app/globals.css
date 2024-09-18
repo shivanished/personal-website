@@ -2,9 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Apply the beige background to both html and body */
+/* Apply the custom background color */
 html, body {
-  @apply bg-beige;
+  @apply bg-lightGreen;
   font-family: 'Inter', sans-serif;
   min-height: 100%;
   margin: 0;

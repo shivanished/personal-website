@@ -1,8 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="256" height="256" viewBox="0 0 256 256" xml:space="preserve">
-
-<defs>
-</defs>
-<g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;" transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)" >
-	<path d="M 90 83.471 H 0 L 45 5.529 L 90 83.471 z M 3.409 81.503 h 83.182 L 45 9.465 L 3.409 81.503 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
-</g>
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="1.407 16.943 252.9 219.017" xmlns="http://www.w3.org/2000/svg">
+  <g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;" transform="matrix(2.809999942779541, 0, 0, 2.809999942779541, 1.406593441963139, 1.4065934419631816)">
+    <path d="M 90 83.471 H 0 L 45 5.529 L 90 83.471 z M 3.409 81.503 h 83.182 L 45 9.465 L 3.409 81.503 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round"/>
+  </g>
 </svg>

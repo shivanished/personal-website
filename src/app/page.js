@@ -1,13 +1,13 @@
 "use client";
 
 import Head from 'next/head';
-import Navbar from '../components/navbar';  // Correct path for Navbar component
-import Footer from '../components/footer';  // Correct path for Footer component
+import Navbar from '../components/Navbar';  // Correct path for Navbar component
+import Footer from '../components/Footer';  // Correct path for Footer component
 import Image from 'next/image';
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen bg-beige">
+    <div className="flex flex-col min-h-screen bg-lightGreen">
       <Head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -35,9 +35,11 @@ export default function Home() {
             </h1>
             
             {/* Dynamic font size for description */}
-            <p className="text-lg sm:text-xl md:text-2xl text-gray-600 mt-2 text-center sm:text-left roboto-mono-regular">
-              Aspiring Software Engineer and Tech Enthusiast
+            <p className="text-lg sm:text-xl md:text-xl text-gray-600 mt-2 text-center sm:text-left roboto-mono-regular">
+              Student/Engineer/<span style={{ fontWeight: 'bold', fontSize: '1.2em', color: '#333' }}>Cool-Guy</span> passionate about full-stack dev and AI because they let me bring <span style={{ fontWeight: 'bold', fontSize: '1.2em', color: '#333' }}>creative</span> ideas to life. My guiding principles are <span style={{ fontWeight: 'bold', fontSize: '1.2em', color: '#333' }}>impact</span>, integrity, and kindness, and I'm always looking to solve a problem that helps others.
             </p>
+
+
 
             {/* Social Media Logos */}
             <div className="flex space-x-4 mt-4">
