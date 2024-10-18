@@ -2,22 +2,19 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 
 const hoverColor = '#f5945c'
 
 export default function Navbar() {
   const [currentDateTime, setCurrentDateTime] = useState('');
   const [isSmallScreen, setIsSmallScreen] = useState(false);
-  const [rotation, setRotation] = useState(0); // State to track the rotation
+  const [rotation, setRotation] = useState(0);
+  const lastScrollPositionRef = useRef({ x: 0, y: 0 });
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth <= 768) {
-        setIsSmallScreen(true);
-      } else {
-        setIsSmallScreen(false);
-      }
+      setIsSmallScreen(window.innerWidth <= 768);
     };
 
     handleResize();
@@ -33,8 +30,8 @@ export default function Navbar() {
       const date = new Date();
       setCurrentDateTime(
         isSmallScreen
-          ? date.toLocaleTimeString() // Display time only on small screens
-          : `${date.toLocaleDateString()} ${date.toLocaleTimeString()}` // Date and time without the comma
+          ? date.toLocaleTimeString()
+          : `${date.toLocaleDateString()} ${date.toLocaleTimeString()}`
       );
     };
 
@@ -46,14 +43,38 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollPosition = window.scrollY;
-      setRotation(scrollPosition / 2); // Adjust rotation speed if needed
+      const currentScrollPosition = {
+        x: window.scrollX,
+        y: window.scrollY
+      };
+
+      const deltaX = currentScrollPosition.x - lastScrollPositionRef.current.x;
+      const deltaY = currentScrollPosition.y - lastScrollPositionRef.current.y;
+
+      // Use the larger of deltaX or deltaY to determine rotation
+      const scrollDelta = Math.abs(deltaX) > Math.abs(deltaY) ? deltaX : deltaY;
+
+      setRotation(prevRotation => (prevRotation + scrollDelta / 2) % 360);
+
+      lastScrollPositionRef.current = currentScrollPosition;
+    };
+
+    const handleWheel = (e) => {
+      // Prevent default only if it's a horizontal scroll section
+      if (e.target.closest('.horizontal-scroll-section')) {
+        e.preventDefault();
+      }
+
+      // Always update rotation based on vertical scroll
+      setRotation(prevRotation => (prevRotation + e.deltaY / 2) % 360);
     };
 
     window.addEventListener('scroll', handleScroll);
+    window.addEventListener('wheel', handleWheel, { passive: false });
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('wheel', handleWheel);
     };
   }, []);
 
@@ -62,18 +83,18 @@ export default function Navbar() {
       <nav className="flex items-center justify-between max-w-full mx-auto">
         {/* Clickable Logo on the left */}
         <div className="flex items-center justify-start" style={{ width: '150px' }}>
-          <Link href="/" passHref> {/* Link to the homepage */}
+          <Link href="/" passHref>
             <Image
-              src="/images/triangle.svg" // Path to your SVG logo
+              src="/images/triangle.svg"
               alt="Home"
-              width={30}  // Reduced width
-              height={30} // Reduced height
+              width={30}
+              height={30}
               style={{ 
                 transform: `rotate(${rotation}deg)`, 
-                transformOrigin: '50% 67%', // Adjust transform origin to triangle's center
+                transformOrigin: '50% 67%',
                 cursor: 'pointer',
-                marginTop: '-5px', // Adjusted to raise the triangle
-              }} // Rotate based on scroll
+                marginTop: '-5px',
+              }}
             />
           </Link>
         </div>

@@ -30,6 +30,48 @@ export default function Experiences() {
               Description of experience 2. Briefly describe the role, responsibilities, and accomplishments.
             </p>
           </div>
+
+          <div className="p-4 bg-white shadow-lg rounded-lg">
+            <h2 className="text-2xl font-semibold text-gray-900">Experience 2</h2>
+            <p className="text-gray-700">
+              Description of experience 2. Briefly describe the role, responsibilities, and accomplishments.
+            </p>
+          </div>
+
+          <div className="p-4 bg-white shadow-lg rounded-lg">
+            <h2 className="text-2xl font-semibold text-gray-900">Experience 2</h2>
+            <p className="text-gray-700">
+              Description of experience 2. Briefly describe the role, responsibilities, and accomplishments.
+            </p>
+          </div>
+
+          <div className="p-4 bg-white shadow-lg rounded-lg">
+            <h2 className="text-2xl font-semibold text-gray-900">Experience 2</h2>
+            <p className="text-gray-700">
+              Description of experience 2. Briefly describe the role, responsibilities, and accomplishments.
+            </p>
+          </div>
+
+          <div className="p-4 bg-white shadow-lg rounded-lg">
+            <h2 className="text-2xl font-semibold text-gray-900">Experience 2</h2>
+            <p className="text-gray-700">
+              Description of experience 2. Briefly describe the role, responsibilities, and accomplishments.
+            </p>
+          </div>
+
+          <div className="p-4 bg-white shadow-lg rounded-lg">
+            <h2 className="text-2xl font-semibold text-gray-900">Experience 2</h2>
+            <p className="text-gray-700">
+              Description of experience 2. Briefly describe the role, responsibilities, and accomplishments.
+            </p>
+          </div>
+
+          <div className="p-4 bg-white shadow-lg rounded-lg">
+            <h2 className="text-2xl font-semibold text-gray-900">Experience 2</h2>
+            <p className="text-gray-700">
+              Description of experience 2. Briefly describe the role, responsibilities, and accomplishments.
+            </p>
+          </div>
         </div>
       </main>
 
