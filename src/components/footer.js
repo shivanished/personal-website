@@ -6,5 +6,5 @@ export default function Footer() {
         <p className="text-gray-500">© 2024 Shivansh Soni. All rights reserved.</p>
       </footer>
     );
-  }
+}
   
