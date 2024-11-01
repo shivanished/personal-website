@@ -47,31 +47,35 @@ export default function Navbar() {
         x: window.scrollX,
         y: window.scrollY
       };
-
+  
       const deltaX = currentScrollPosition.x - lastScrollPositionRef.current.x;
       const deltaY = currentScrollPosition.y - lastScrollPositionRef.current.y;
-
-      // Use the larger of deltaX or deltaY to determine rotation
-      const scrollDelta = Math.abs(deltaX) > Math.abs(deltaY) ? deltaX : deltaY;
-
-      setRotation(prevRotation => (prevRotation + scrollDelta / 2) % 360);
-
+  
+      // Only update rotation if there's actual movement
+      if (deltaX !== 0 || deltaY !== 0) {
+        // Use the larger of deltaX or deltaY to determine rotation
+        const scrollDelta = Math.abs(deltaX) > Math.abs(deltaY) ? deltaX : deltaY;
+        setRotation(prevRotation => (prevRotation + scrollDelta / 2) % 360);
+      }
+  
       lastScrollPositionRef.current = currentScrollPosition;
     };
-
+  
     const handleWheel = (e) => {
       // Prevent default only if it's a horizontal scroll section
       if (e.target.closest('.horizontal-scroll-section')) {
         e.preventDefault();
       }
-
-      // Always update rotation based on vertical scroll
-      setRotation(prevRotation => (prevRotation + e.deltaY / 2) % 360);
+  
+      // Only update rotation if there's actual page movement
+      if (window.scrollY !== lastScrollPositionRef.current.y) {
+        setRotation(prevRotation => (prevRotation + e.deltaY / 2) % 360);
+      }
     };
-
+  
     window.addEventListener('scroll', handleScroll);
     window.addEventListener('wheel', handleWheel, { passive: false });
-
+  
     return () => {
       window.removeEventListener('scroll', handleScroll);
       window.removeEventListener('wheel', handleWheel);
@@ -105,7 +109,7 @@ export default function Navbar() {
           <Link href="/experiences" className={`hover:text-[${hoverColor}]`}>Experiences</Link>
 
           {/* Personal Dropdown */}
-          <div className="relative group">
+          {/* <div className="relative group">
             <button className={`hover:text-[${hoverColor}] focus:outline-none pb-2`}>
               Personal
             </button>
@@ -118,7 +122,7 @@ export default function Navbar() {
                 What Am I Listening To?
               </Link>
             </div>
-          </div>
+          </div> */}
         </div>
 
         {/* Current Date and Time on the right */}
