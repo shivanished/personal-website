@@ -12,7 +12,7 @@ export default function Listening() {
       <main className="flex-grow p-6">
         <h1 className="text-4xl font-bold text-gray-900 mb-6">What Am I Listening To?</h1>
         <p className="text-lg text-gray-600 mb-4">
-          Below are some of the artists and albums I'm currently listening to:
+          Below are some of the artists and albums I&apos;m currently listening to:
         </p>
 
         {/* Add your favorite music here */}

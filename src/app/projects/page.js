@@ -73,7 +73,7 @@ export default function Projects() {
         <div className="h-full flex flex-col p-6">
           <h1 className="text-4xl font-bold text-gray-900 mb-6">Projects</h1>
           <p className="text-lg text-gray-600 mb-4">
-            Here are some projects I've worked on:
+            Here are some projects I&apos;ve worked on:
           </p>
 
           {/* Project rows without overflow */}
