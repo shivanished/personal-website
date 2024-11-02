@@ -2,7 +2,7 @@ import './globals.css';
 
 export const metadata = {
   title: 'Shivansh Soni | Personal Website',
-  description: 'Welcome to Shivansh’s personal website built with Next.js!',
+  description: 'Welcome to Shivansh’s personal website!',
 };
 
 export default function RootLayout({ children }) {
