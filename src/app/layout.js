@@ -2,7 +2,10 @@ import './globals.css';
 
 export const metadata = {
   title: 'Shivansh Soni | Personal Website',
-  description: 'Welcome to Shivansh’s personal website!',
+  description: 'Welcome to Shivansh\'s personal website!',
+  icons: {
+    icon: '/icon.png',
+  },
 };
 
 export default function RootLayout({ children }) {
