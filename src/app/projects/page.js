@@ -8,6 +8,13 @@ import Image from 'next/image';
 export default function Projects() {
   const projects = [
     {
+      title: "Posthuman",
+      year: 2025,
+      description: "\"Upload you consciousness to the blockchain.\" Posthuman ensures your digital legacy lives on with AI-powered estate management, secure asset delegation, and blockchain-backed will execution — seamlessly handling your affairs when you no longer can.",
+      githubLink: "https://github.com/r-agni/posthuman",
+      logLink: "https://devpost.com/software/posthuman"
+    },
+    {
       title: "FormPix",
       year: 2024,
       description: "A Chrome extension that automates filling online legal forms (USCIS) by extracting information from images of documents. Utilized image processing algorithms (OCR) to accurately parse images for data and classification to populate form fields. Used by two law firms.",
