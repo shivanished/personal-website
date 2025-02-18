@@ -1,74 +1,82 @@
 "use client";
 
-import { useState, useEffect } from 'react';
-import Navbar from '../../components/Navbar';
-import Footer from '../../components/Footer';
-import Image from 'next/image';
+import { useState, useEffect } from "react";
+import Navbar from "../../components/Navbar";
+import Footer from "../../components/Footer";
+import Image from "next/image";
 
 export default function Projects() {
   const projects = [
     {
       title: "Posthuman",
       year: 2025,
-      description: "\"Upload you consciousness to the blockchain.\" Posthuman ensures your digital legacy lives on with AI-powered estate management, secure asset delegation, and blockchain-backed will execution — seamlessly handling your affairs when you no longer can.",
-      githubLink: "https://github.com/r-agni/posthuman",
+      description:
+        '"Upload you consciousness to the blockchain." Posthuman ensures your digital legacy lives on with AI-powered estate management, secure asset delegation, and blockchain-backed will execution that seamlessly handles your affairs when you no longer can. Posthuman secure\'s your legacy with AI-powered features like Legally-Executable Will Generation, Asset Identification/Tracking, Agentic Subscriptions Cancelling, Posthumous Chat, AI-generated Media of Loved One, and Blockchain Integration for Trustability/Verifiability.',
+      githubLink: "https://github.com/shivanished/form-filler",
       logLink: "https://devpost.com/software/posthuman"
     },
     {
       title: "FormPix",
       year: 2024,
-      description: "A Chrome extension that automates filling online legal forms (USCIS) by extracting information from images of documents. Utilized image processing algorithms (OCR) to accurately parse images for data and classification to populate form fields. Used by two law firms.",
-      githubLink: "https://github.com/shivanished/form-filler"
+      description:
+        "A Chrome extension that automates filling online legal forms (USCIS) by extracting information from images of documents. Utilized image processing algorithms (OCR) to accurately parse images for data and classification to populate form fields. Used by two law firms.",
+      githubLink: "https://github.com/shivanished/form-filler",
     },
     {
       title: "Docker Contract - Berkeley Nutritional Meal Generator",
       year: 2024,
-      description: "An AI-powered MERN Stack web app that uses two in-house trained RNNs to create a meal plan for a Berkeley Student based on the day's dining hall menu and dietary preferences (i.e. vegetarian, bulking, paleo, etc.). Goal was to showcase Docker's ability/ease-of-use in enabling a microservices architecture, especially for implementing AI whilst penetrating/growing the use of Docker in the college/high-school developer demographic.",
+      description:
+        "An AI-powered MERN Stack web app that uses two in-house trained RNNs to create a meal plan for a Berkeley Student based on the day's dining hall menu and dietary preferences (i.e. vegetarian, bulking, paleo, etc.). Goal was to showcase Docker's ability/ease-of-use in enabling a microservices architecture, especially for implementing AI whilst penetrating/growing the use of Docker in the college/high-school developer demographic.",
       githubLink: "https://github.com/shivanished/docker-met-API",
     },
     {
       title: "High-Frequency Tactile Transducer",
       year: 2024,
-      description: "A device that translates audio signals (especially high-frequency audio) into tactile sensations for audibly impaired individuals, creating a more complete musical experience. The mission is to enable individuals to experience, not only the bass in music, but treble as well.",
+      description:
+        "A device that translates audio signals (especially high-frequency audio) into tactile sensations for audibly impaired individuals, creating a more complete musical experience. The mission is to enable individuals to experience, not only the bass in music, but treble as well.",
       githubLink: "https://github.com/shivanished/hf-tactile-transducer",
       // logLink: "/logs/hf-tactile-transducer"
     },
     {
       title: "Survive! - The Game",
       year: 2024,
-      description: "A Java game. Your plane crash landed. You're stuck on the island Fugaji. You're cold, alone, and hungry. Atleast there's fruit around. Eat them to survive!",
+      description:
+        "A Java game. Your plane crash landed. You're stuck on the island Fugaji. You're cold, alone, and hungry. Atleast there's fruit around. Eat them to survive!",
       githubLink: "https://github.com/Berkeley-CS61B-Student/sp24-proj3-g607",
     },
     {
       title: "S1XT33N - Voice Controlled Car",
       year: 2024,
-      description: "A robot car built with breadboards, wires, and wheels that listens to voice commands then drives on that command's pre-determined path. Employed Digital-to-Analog and Analog-to-Digital Converters, motion sensors, band-pass filter circuits, System ID, Principal Compenent Analysis, and Singular Value Decomposition to build, test, and tune the car.",
+      description:
+        "A robot car built with breadboards, wires, and wheels that listens to voice commands then drives on that command's pre-determined path. Employed Digital-to-Analog and Analog-to-Digital Converters, motion sensors, band-pass filter circuits, System ID, Principal Compenent Analysis, and Singular Value Decomposition to build, test, and tune the car.",
     },
     {
       title: "Blue Origin - Blue Alchemist Financial Strategy ",
       year: 2023,
-      description: "Conducted market and industry research/company SWOT analysis to develop an innovative go-to-market strategy for the rapid commercialization of Blue Origin's in-situ solar panel-producing lunar module Blue Alchemist. Provided multiple opportunities - short-term/long-term solutions; Calculated projected financials (i.e. profit over time, depreciation, etc.) to assess viability and sustainability",
+      description:
+        "Conducted market and industry research/company SWOT analysis to develop an innovative go-to-market strategy for the rapid commercialization of Blue Origin's in-situ solar panel-producing lunar module Blue Alchemist. Provided multiple opportunities - short-term/long-term solutions; Calculated projected financials (i.e. profit over time, depreciation, etc.) to assess viability and sustainability",
     },
     {
       title: "2write.app",
       year: 2023,
       description:
         'A web-app writing software that uses AI to supplement user-inputted text for essay writing. <a href="https://2write.app" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">2write.app</a> implements AI to support users in writing essays by generating prompts/outlines, completing sentences, and suggesting ideas. This creates an experience that facilitates higher quality writing that\'s undetectable as AI.',
-      githubLink: "https://github.com/aidanbunch/2write"
+      githubLink: "https://github.com/aidanbunch/2write",
     },
     {
       title: "FoodShelf",
       year: 2022,
-      description: "Designed and developed a native iOS app using SwiftUI and Apple's CoreML to classify leftover foods and determine how long they can be stored or composted.",
-      githubLink: "https://github.com/shivanished/foodShelf"
+      description:
+        "Designed and developed a native iOS app using SwiftUI and Apple's CoreML to classify leftover foods and determine how long they can be stored or composted.",
+      githubLink: "https://github.com/shivanished/foodShelf",
     },
     {
       title: "Disease Diagnosing Statistical Classification Algorithm",
       year: 2021,
       description:
         "Developed a Python program that uses statistical classification methods to determine what diseases a person might have based on their symptoms. I prioritized diseases prevalent in less-developed countries (i.e. Malaria, Tuberculosis, etc.) to offer a solution for individuals in medically underserved areas.",
-      youtubeLink: "https://www.youtube.com/watch?v=GLnkgeeUpAs"
-    }
+      youtubeLink: "https://www.youtube.com/watch?v=GLnkgeeUpAs",
+    },
   ];
 
   return (
@@ -99,10 +107,18 @@ export default function Projects() {
 
 function ProjectRow({ project }) {
   const [isExpanded, setIsExpanded] = useState(false);
+  const [selectedMedia, setSelectedMedia] = useState(null);
 
-  // Function to toggle expansion
   const toggleExpand = () => {
     setIsExpanded(!isExpanded);
+  };
+
+  const openModal = (item) => {
+    setSelectedMedia(item);
+  };
+
+  const closeModal = () => {
+    setSelectedMedia(null);
   };
 
   return (
@@ -114,8 +130,12 @@ function ProjectRow({ project }) {
       >
         {/* Left side: Project title and year */}
         <div className="flex items-center space-x-4">
-          <h2 className="text-xl font-semibold text-gray-900 roboto-mono-bold">{project.title}</h2>
-          <span className="text-gray-600 roboto-mono-regular">({project.year})</span>
+          <h2 className="text-xl font-semibold text-gray-900 roboto-mono-bold">
+            {project.title}
+          </h2>
+          <span className="text-gray-600 roboto-mono-regular">
+            ({project.year})
+          </span>
         </div>
 
         {/* Right side: GitHub, YouTube, Logs, Dropdown icons */}
@@ -187,14 +207,19 @@ function ProjectRow({ project }) {
           >
             <svg
               className={`w-6 h-6 transform transition-transform ${
-                isExpanded ? 'rotate-180' : ''
+                isExpanded ? "rotate-180" : ""
               }`}
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M19 9l-7 7-7-7"
+              />
             </svg>
           </button>
         </div>
@@ -204,11 +229,67 @@ function ProjectRow({ project }) {
       {isExpanded && (
         <div className="px-6 py-4 bg-lightGreen">
           <p
-            className="text-gray-700 roboto-mono-regular"
+            className="text-gray-700 roboto-mono-regular whitespace-pre-line mb-4"
             dangerouslySetInnerHTML={{ __html: project.description }}
           ></p>
+          
+          {project.media && project.media.length > 0 && (
+            <div className="overflow-x-auto">
+              <div className="flex space-x-4 pb-4">
+                {project.media.map((item, index) => (
+                  <div
+                    key={index}
+                    className="flex-shrink-0 w-64 h-48 cursor-pointer"
+                    onClick={() => openModal(item)}
+                  >
+                    {item.type === "image" && (
+                      <img
+                        src={item.src}
+                        alt={item.alt}
+                        className="w-full h-full object-cover rounded-lg"
+                      />
+                    )}
+                    {item.type === "video" && (
+                      <video
+                        src={item.src}
+                        className="w-full h-full rounded-lg object-cover"
+                      >
+                        Your browser does not support the video tag.
+                      </video>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       )}
+
+      {selectedMedia && (
+        <MediaModal item={selectedMedia} onClose={closeModal} />
+      )}
+    </div>
+  );
+}
+
+function MediaModal({ item, onClose }) {
+  return (
+    <div 
+      className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
+      onClick={onClose}
+    >
+      <div 
+        className="bg-white p-4 rounded-lg max-w-4xl max-h-[90vh] overflow-auto"
+        onClick={(e) => e.stopPropagation()}
+      >
+        {item.type === "image" ? (
+          <img src={item.src} alt={item.alt} className="max-w-full max-h-[80vh] object-contain" />
+        ) : (
+          <video src={item.src} controls className="max-w-full max-h-[80vh]">
+            Your browser does not support the video tag.
+          </video>
+        )}
+      </div>
     </div>
   );
 }
